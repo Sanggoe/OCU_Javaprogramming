@@ -1,4 +1,4 @@
-package com.company;
+package com.company.week;
 
 public class IncreaseTest {
     public static void main(String[] args) {

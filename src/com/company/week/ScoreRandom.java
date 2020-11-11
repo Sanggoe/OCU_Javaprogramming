@@ -1,4 +1,4 @@
-package com.company;
+package com.company.week;
 
 import java.util.Random;
 import java.util.Scanner;

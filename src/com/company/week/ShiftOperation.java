@@ -1,4 +1,4 @@
-package com.company;
+package com.company.week;
 
 public class ShiftOperation {
     public static void main(String[] args) {

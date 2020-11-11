@@ -1,4 +1,4 @@
-package com.company;
+package com.company.week;
 
 public class Shift {
     public static int leftShift(int i, int j) {

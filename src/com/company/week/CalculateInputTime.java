@@ -1,4 +1,4 @@
-package com.company;
+package com.company.week;
 
 public class CalculateInputTime {
     public static void main(String[] args) {
