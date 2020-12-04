@@ -1,0 +1,44 @@
+* 데이터베이스
+- Oracle, MySQL, Maria, ...
+
+* MySQL ...
+create table
+show table
+insert into
+
+Class.forName("Driver_Name") // jdbc 드라이버를 찾는다.
+
+Connection conn = DriverManager // 드라이버 인스턴스를 생성하며 커넥션을 생성한다.
+          .getConnection("DBURL", "Account ID","Account PW");
+
+Statement stmt = conn.createStatement(); // 커넥션 객채로부터 스테이트먼트 객체를 생성
+
+ResultSet rs = stmt.executeQuery("select * from ... "); // 익스큐트 쿼리로부터 sql 쿼리문을 보낸다.
+
+rs.close(); stmt.close(); conn.close() // 사용 완료 후 종료!
+
+
+* JDBC 구성
+자바 프로그램 (JSP, Server등) <-> JDBC (JDBC 인터페이스<-> JDBC 드라이버) <-> DBMS
+
+
+* JSP와 데이터베이스 연동
+import = "java.sql.*"
+Class.forName() : JDBC 드라이버의 인스턴스 생성.
+인자로는
+- MySQL 사용 위한 드라이버 로딩 : "org.gjt.mm.mysql.Driver"
+- 오라클 사용 위한 드라이버 로딩 : "oracle.jdbc.driver.OracleDriver"
+- ODBC 브리지 : "sun.jdbc.odbc.JdbcOdbcDriver"
+
+getConnection() : JDBC 드라이버 인스턴스를 통해 DBMS에 대한 연결 생성
+인자 예시로는
+- "jdbc:mysql://localhost:3306/myDB", "root", ""
+"JDBC URL/databaseName 형태", "DB로그인계정", "비밀번호" 이다.
+
+Oracle의 경우
+getConnection("jdbc:oracle:thin:@localhost:1521:system_id", "scott", "tiger")
+
+ODBC의 경우
+getConnection("jdbc:odbc:DSNname", "sa", "")
+
+

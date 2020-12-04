@@ -1,0 +1,18 @@
+* 데이터베이스
+- Oracle, MySQL, Maria, ...
+
+* MySQL ...
+create table
+show table
+insert into
+
+Class.forName("Driver_Name") // jdbc 드라이버를 찾는다.
+
+Connection conn = DriverManager // 드라이버 인스턴스를 생성하며 커넥션을 생성한다.
+          .getConnection("DBURL", "Account ID","Account PW");
+
+Statement stmt = conn.createStatement(); // 커넥션 객채로부터 스테이트먼트 객체를 생성
+
+ResultSet rs = stmt.executeQuery("select * from ... "); // 익스큐트 쿼리로부터 sql 쿼리문을 보낸다.
+
+rs.close(); stmt.close(); conn.close() // 사용 완료 후 종료!
