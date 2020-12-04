@@ -782,10 +782,10 @@ total records : <%= counter%>
 * 모델2는 MVC 디자인 패턴에 기반
 * Spring... 최소 자바 빈즈에는 익숙해져야함
 
-
+<br/>
 
 * JSP 문법 : <%X ... %> // X는 다음 것들 중 하나
-  * **@ Derective** : Global Information for page
+  * **@ Directive** : Global Information for page
     * Language, import statement, 등
     * 현재 jsp 페이지 전체에 대해 적용되는 지시자!
   * **Scripting** 요소 : Java code
@@ -794,7 +794,7 @@ total records : <%= counter%>
     * **=** Expression : 변수의 값이 페이지에 출력되도록 함 
   * **Actions** : To modify runtime behavior
 
-
+<br/>
 
 ### JSP 요소
 
@@ -811,11 +811,9 @@ total records : <%= counter%>
 <%@ taglib %>	: taglib를 정의한다.
 ```
 
+<br/>
 
-
-
-
-### JSP 요소(주속)
+### JSP 요소(주석)
 
 * HTML 형식의 주석
 
@@ -845,7 +843,7 @@ total records : <%= counter%>
     /**/, //, /** */
     ```
 
-
+<br/>
 
 ### JSP Directives <%@
 
@@ -859,7 +857,7 @@ total records : <%= counter%>
   * JSP가 컴파일 되기 전에 JSP로 파일이 inline 형태로 삽입됨
   * 사실상 하나의 코드를 두 개의 소스코드로 따로 저장하는거라고 이해..하자
 
-
+<br/>
 
 * Directives > include directive
   * 현재 JSP 파일에 다른 JSP나 HTML 문서를 포함시킴.
@@ -883,7 +881,7 @@ total records : <%= counter%>
 </HTML>
 ```
 
-
+<br/>
 
 * 그 외에도 사용할 수 있는 디렉토리들이 많이 있다! Directives
   * language
@@ -896,10 +894,10 @@ total records : <%= counter%>
   * errorPage
   * contentType
 
+<br/>
 
-
-* <%을 열고%>를 닫기 전에 앞 뒤에 공백을 한 칸씩 주는 것은 선택이지만 가독성을 위해 권장!
-* XML 기번 형식으로도 사용 가능
+* <% 을 열고 %>를 닫기 전에 앞 뒤에 공백을 한 칸씩 주는 것은 선택이지만 가독성을 위해 권장!
+* XML 기반 형식으로도 사용 가능
   * <jsp:directive.page attribute="value1" attribute2="value2" attribute3=../>
 * <%@ page info="This is a valid set of page directives." %>
 * <%@ page language="java" import="java.net" %>
@@ -909,45 +907,45 @@ total records : <%= counter%>
 * <%@ page info="This is an invalide page directive"%>
 * <%@ page extends="com.taglib.wdjsp.MyJspPage" info="Use my superclass."%>
 
-
+<br/>
 
 #### 위 항목들 설명
 
-* Info attribute
+* **Info** attribute
   * Page 작성자가 기능에 대한 **웹 사이트 개발자에게 정보를 전달하는 용도**로, JSP 컨테이너에게만 avaliable함
   * <%@ page info="This is a valid set of page directives." %>
-* Language attribute
+* **Language** attribute
   * <%@ page language="java" import="java.net" %>
   * 디폴트 속성이 자바기때문에, 랭귀지 속성을 넣을 필요는 없다.
-* ContentType attribute
+* **ContentType** attribute
   * JSP 페이지에 의해 생성되는 응답의 MIME type을 지정할 수 있도록 한다.
   * <%@ page contentType="text/xml" %>
   * <%@ page contentType="text/html"; charset=ISO-8859-1" %>
-* Extends attribute
+* **Extends** attribute
   * JSP 페이지가 Javaservlet으로 translation 될 때, JSP 컨테이너에 의해서 사용되는 superclass를 식별하도록 하는 attribute
   * <%@ page extends="com.taglib.wdjsp.MyJspPage" "%>
-* Import attribute
+* **Import** attribute
   * 매우 자주 사용된다.
-  * 참조하는 자바 클레스 셋을 확장할 수 있기 때문에, 여러줄이 될 수 있다.
+  * 참조하는 자바 클레스 셋을 확장할 수 있기 때문에, 여러 줄이 될 수 있다.
   * <%@ page import= "java.util.List, java.util.ArrayList" %>
   * <%@ page import= "java.util.*, java.awt.\*" %>
-* Session attribute
+* **Session** attribute
   * 웹서버하고 클라이언트가 일시적으로 정보를 끝낼것이냐, 아니면 세션을 유지해서 지속적으로 해당 사용자라는 정보를 유지할 수 있도록 해줄 것이냐.
   * <%@ page session="false" %>
   * 통상적으로는 false로 하지만, 유지해야할 경우에는 true!
-* Buffer attribute
+* **Buffer** attribute
   * JSP 페이지에 대한 버퍼 사이즈를 설정할 수 있는 속성
   * <%@ page buffer="none" %>
   * <%@ page buffer="12kb" %>
   * 버퍼의 크기를 지정해서 데이터를 한번에 모아서 전달할 수 있게 해준다.
-* AutoFlush attribute
+* **AutoFlush** attribute
   * 페이지의 버퍼가 가득 찼을 때, 내용을 자동으로 컨테이너로 플러시 시켜줄 수 있도록 할것인지 설정
   * <%@ page autoFlush="true" %>
-* ErrorPage attribute
+* **ErrorPage** attribute
   * 에러 페이지에 해당하는 경로를 지정해 준다.
   * <%@ page errorPage="/webdev/misc/error.jsp" %>
 
-
+<br/>
 
 * 현재 JSP 페이지를 컨테이너에서 처리하기 위한 속성 지정 예시
 
@@ -955,11 +953,11 @@ total records : <%= counter%>
 <%@ page contentType="text/html; charset=euc-kr"
 import="javax.sql.*, java.util.*"
 errorPage="error.jsp"%>
-    
+
 <%@ page import="java.util.*" %>
 ```
 
-
+<br/>
 
 ### 커스텀 태그 라이브러리
 
@@ -984,7 +982,8 @@ errorPage="error.jsp"%>
     </HTML>
     ```
 
-    
+
+<br/>
 
 ### JSP Script - 선언 <!
 
@@ -1006,17 +1005,18 @@ errorPage="error.jsp"%>
 
   * 선언 형태로 메소드도 정의할 수 있다.
 
-
+<br/>
 
 * 예시
 
 ```jsp
 <%@ page import="java.util.Date" %>
-<%! int sum=0;
-private int AddToCount(int X) {
-sum = sum + X;
-return sum;
-}
+<%! 
+    int sum=0;
+	private int AddToCount(int X) {
+		sum = sum + X;
+		return sum;
+	}
 %>
 
 <html>
@@ -1029,9 +1029,9 @@ return sum;
 </html>
 ```
 
+<br/>
 
-
-### JSP Script - Scriptlets 
+### JSP Script - Scriptlets <%
 
 * 일반적인 자바코드 블록.
 
@@ -1039,9 +1039,9 @@ return sum;
 
 * Scriptlet은 servlet 객체들을 access 할 수 있다. **꼭 알고있어야 할 객체들 세 개★**
 
-  * Request : our usual request // 들어오는 인자값들
-  * Response : our usual res // 나가는 출력값들
-  * Out : for printing // out.print
+  * **Request** : our usual request // 들어오는 인자값들
+  * **Response** : our usual res // 나가는 출력값들
+  * **Out** : for printing // out.print
 
 * 예
 
@@ -1049,7 +1049,7 @@ return sum;
 
     outprintln(nameVal); %>
 
-
+<br/>
 
 ### 예제
 
@@ -1074,13 +1074,13 @@ return sum;
 </html>
 ```
 
-
+<br/>
 
 * Expression
   * 간략화된 scriptlet print 명령
   * \<p> <%= nameval %> \</p>
 
-
+<br/>
 
 ### JSP 액션태그
 
@@ -1092,7 +1092,7 @@ return sum;
   * useBean
   * 등등
 
-
+<br/>
 
 * include 액션태그
   * include directive는 소스코드 자체를 포함시키는 것!!
@@ -1112,7 +1112,7 @@ return sum;
 <%= i %>
 ```
 
-
+<br/>
 
 * forward  액션태그
   * 다른 페이지로 이동할 때 사용. 자주 쓰인대!!
@@ -1124,7 +1124,7 @@ return sum;
 <jsp:forward page=,,<%= expression %>"/>
 ```
 
-
+<br/>
 
 ```jsp
 == forwardact.html ==
@@ -1159,12 +1159,12 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </jsp:forwar>
 ```
 
-
+<br/>
 
 * plugin 액션태그
   * 과거 애플릿을 사용할 때라 넘어갑니다.
 
-
+<br/>
 
 ### 커스텀 태그 라이브러리!
 
@@ -1178,7 +1178,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * 웹 페이지의 일관성!
   * 재사용성!
 
-
+<br/>
 
 * 반복적인 일을 단순하게...
 
@@ -1230,7 +1230,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   
   * jar 파일 형식 패키지로 배포된다.
 
-
+<br/>
 
 * 커스텀 태그 라이브러리
   * 태그 핸들러 클래스
@@ -1240,7 +1240,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
     * 태그 라이브러리를 설명해주는 파일로, XML의 표준 형식을 따르는 XML 문서
     * 즉, JSP에서 태그 호출 시 태그를 처리하는 핸들러로 연결시켜줘서 관련 처리를 실행하게 해준다.
 
-
+<br/>
 
 #### 커스텀 태그를 웹 페이지에 설정하고 이용하는 부분
 
@@ -1263,13 +1263,11 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
     * description이 끝나는 위치에 속성을 정의할 필요가 있다.
     * \<taglib> 시작부터 \</taglib> 끝 까지
 
+<br/>
 
+<br/>
 
-
-
-
-
-### 쿠키와 세션
+## 쿠키와 세션
 
 * 세션이든 쿠키든 정보를 만들어지는 주체는 서버.
 * 세션은 서버, 쿠키는 클라이언트에 저장됨
@@ -1317,7 +1315,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * 얻어진 이름을 통해 정보 사용
     * cookies[i].getValue()
 
-
+<br/>
 
 ### JSP 내부 객체 (JSP implict object)
 
@@ -1406,7 +1404,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 #### 세션 인터페이스
 
@@ -1418,7 +1416,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 * 이 ID를 이후에 발생한 클라이언트의 요청과 비교해서 같은 ID인지 확인
 * 여기서 사용되는 유일한 값인 식별자는 클라이언트에 저장 (클라이언트에 저장되는 것은 쿠키에서와 달리 **이 식별자** 뿐)
 
-
+<br/>
 
 #### 세션 객체
 
@@ -1434,7 +1432,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * Boolean isNew()
   * void invalidate()
 
-
+<br/>
 
 * 세션관리
   * 웹 컨테이너는 브라우저당 1개의 세션 ID정보를 부여함
@@ -1444,7 +1442,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * 이후 브라우저는 자신의 세션 아이디를 웹 컨테이너에 전송!
   * 클라이언트가 보낸 세션 아이디를 이용해 사용자를 식별
 
-
+<br/>
 
 * Session 내장 객체
   * HttpSession 인터페이스의 메소드
@@ -1454,7 +1452,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
     * getMaxInactiveInterval() : 세션의 유효시간 초단위 설정
     * invalidate() : 세션 삭제
 
-
+<br/>
 
 * Session 내장 객체 사용
 
@@ -1481,7 +1479,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 * Session 객체의 공유
   * 세션이 유지되는 동안 여러 요청을 처리하는데 사용되는 JSP페이지들 사이에서 session 객체가 공유 된다.
@@ -1507,7 +1505,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 * 세션의 삭제
   * 세션 삭제를 위해선 invalidate()를 사용
@@ -1516,7 +1514,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * 사용자가 웹 브라우저를 종료하면 세션이 삭제됨
   * 웹 브라우저를 종료하지 않더라도 설정된 유효시간(타임아웃 시간)이 초과되면 세션이 삭제됨
 
-
+<br/>
 
 * Session 삭제하기
 
@@ -1538,7 +1536,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 * 세션의 유효시간
 
@@ -1575,7 +1573,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
     %>
     ```
 
-
+<br/>
 
 * Session 객체를 수동으로 얻기
   * JSP에서 세션은 자동으로 만들어진다.
@@ -1584,7 +1582,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
     * request.getCookies() 랑 똑같이 수동으로 받아올 수 있다.
   * Request.getSession(false)는 기존 세션 객체를 리턴하거나, 세션이 존재하지 않으면 null을 리턴
 
-
+<br/>
 
 * HttpSession 인터페이스
 
@@ -1605,7 +1603,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 * 세션을 이용한 로그인/로그아웃 절차
   * 로그인 폼을 이용해 아이디, 비번 입력받기
@@ -1620,7 +1618,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * 차후 로그인 여부를 확인하려면 Login 속성의 값을 확인
     * 값이 null이 아니면 로그인 한 상태가 됨
 
-
+<br/>
 
 * 로그인 작업(login.jsp)
 
@@ -1641,7 +1639,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </body>
 ```
 
-
+<br/>
 
 * 로그인 확인 작업
 
@@ -1661,7 +1659,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </body>
 ```
 
-
+<br/>
 
 * 로그아웃 작업
 
@@ -1687,7 +1685,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 ### 자바빈 개념과 정의
 
@@ -1701,7 +1699,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   * 여러 JSP 페이지에서 자바빈을 재사용
     * 별토의 클래스 파일로 존재한다.
 
-
+<br/>
 
 * 자바빈 설계 규약
   * 스프링이나 다른 상용화된 프레임워크 등도 이 자바빈 규약을 따른다고..! 알아야 해
@@ -1713,7 +1711,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 * Getter, Setter
   * 이건 설명 필요 없지?
 
-
+<br/>
 
 * <jsp:useBean id="name" class="package.Class" />
 
@@ -1737,7 +1735,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
   }
   ```
 
-  
+<br/>
 
 * 사용 예제
 
@@ -1783,7 +1781,7 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 </html>
 ```
 
-
+<br/>
 
 * 자바빈 사용
 
@@ -1810,3 +1808,4 @@ Forwarding 페이지에서 별도의 매개변수 값을 추가할 수 있습니
 
 ```
 
+<br/>
